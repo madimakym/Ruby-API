@@ -1,0 +1,47 @@
+        <div class="container text-header">
+          <h1 class="titre">All users</h1>
+        </div>
+        <div class="container content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='/users' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-8">
+              <div class="box box-info">
+                <div class="box box-solid detail">
+                    <%= form_tag "/users/#{@user.id}", method: 'patch' do %>
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label for="libelle">Name</label>
+                        <input type="text" class="form-control" name="name" value="<%= @user.name %>"/>
+                        <p><%= @user.errors[:name].first %></p>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="libelle">Address</label>
+                        <input type="text" class="form-control" name="address" value="<%= @user.address %>"/>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="libelle">Phone</label>
+                        <input type="text" class="form-control" name="phone" value="<%= @user.phone %>"/>
+                      </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-sm" >Enregistrer</button>
+                    </div>
+                   <% end %>
+                   
+                </div>  
+              </div>
+            </div>
+          
+            </div>
+        </div>

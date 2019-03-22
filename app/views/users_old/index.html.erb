@@ -1,0 +1,45 @@
+        <div class="container text-header">
+          <h1 class="titre">All users</h1>
+        </div>
+        <div class="container content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='users/new' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add new user </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Phone</th>
+                      <th class="align-center action">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @users.each do |user| %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.address %> </td>
+                        <td><%= user.phone %> </td>
+                        <td> 
+                            <a class="btn btn-primary btn-sm" href="users/<%= user.id %>">View</a> 
+                            <a class="btn btn-primary btn-sm" href="users/<%= user.id %>/edit">Update</a>
+                            <%= form_tag "/users/#{user.id}", method: "delete", data: {confirm: "Voulez-vous vraiment supprimer?"} do %>
+                              <input type="submit" class="btn btn-primary btn-sm" value="Delete">
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>

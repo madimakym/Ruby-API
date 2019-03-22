@@ -1,0 +1,34 @@
+        <div class="container text-header">
+          <h1 class="titre">All users</h1>
+        </div>
+        <div class="container content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='/users' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-8">
+                    <div class="box box-info">
+                        <div class="box box-solid">
+                            <%= render 'form', user: @user %>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-md-4">
+                <div class="box box-success">
+                  <div class="box-header">
+                      <br> <img src="<%= @user.image %>" class="img-thumbnail img-center" width="100%"><br>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+
+

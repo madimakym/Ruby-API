@@ -1,0 +1,27 @@
+        <div class="container text-header">
+          <h1 class="titre">All users</h1>
+        </div>
+        <div class="container content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='/users' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-8">
+              <div class="box box-info">
+                <div class="box box-solid detail">
+                   <p>Name : <span> <%= @user.name %></span></p>
+                   <p>Address : <span> <%= @user.address %></span></p>
+                   <p>Phone : <span> <%= @user.phone %></span></p>
+                </div>  
+              </div>
+            </div>
+          
+            </div>
+        </div>

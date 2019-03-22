@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CrudUser</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <%= render 'layouts/sidebar' %>
+    <div id="page-content-wrapper">
+
+     <%= render 'layouts/header' %>
+     <%= yield %>
+    </div>
+  </div>
+    
+    <%= render 'layouts/footer' %>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+   <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    $(document).ready(function(){
+    $("h1").click(function(){
+      alert("The paragraph was clicked.");
+    });
+
+    // active class
+    var url = window.location.href;
+
+    var url1 = this.href;
+    var url2 = document.location.href;
+    var url3 = this.href;
+
+    console.log('url principal',url)
+
+    $('li').each(function(){
+    if(window.location.href.indexOf($(this).find('a:first').attr('href'))>-1)
+    {
+    $(this).addClass('active').siblings().removeClass('active');
+    }
+  });
+
+
+    //  $('#sidebar-wrapper').find('a').each(function () {
+    //         if (document.location.href == this.href.replace('#','')) {
+    //             $(this).parents().addClass("active");
+    //         }
+    //     });
+
+
+  });
+
+  
+  </script>
+</html>

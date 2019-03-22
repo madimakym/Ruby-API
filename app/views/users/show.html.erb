@@ -1,0 +1,37 @@
+        <div class="container text-header">
+          <h1 class="titre">All users</h1>
+        </div>
+        <div class="container content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='/users' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a> |  <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-primary btn-sm' %> 
+              </div>
+            </div>
+            <div class="col-md-6">
+                <p id="notice"><%= notice %></p>
+            </div>
+          </div>
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="box box-info">
+                  <div class="box box-solid detail">
+                    <p>Name : <span> <%= @user.name %></span></p>
+                    <p>email : <span> <%= @user.email %></span></p>
+                    <p>Phone : <span> <%= @user.phone %></span></p>
+                  </div>  
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="box box-success">
+                  <div class="box-header">
+                      <br> <img src="<%= @user.image %>" class="img-thumbnail img-center" width="100%"><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            
