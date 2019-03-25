@@ -1,9 +1,9 @@
-
   <div class="container-fluid text-header">
-          <h1 class="titre">dejeuner</h1>
+        <h1 class="titre">dejeuner</h1>
         </div>
-        <div class="container content">
-        <p id="notice"><%= notice %></p>
+        <div class="container">
+        <div class="content">
+          <p id="notice"><%= notice %></p>
           <div class="row">
             <div class="col-md-6">
               <div class="blc-button">
@@ -13,7 +13,6 @@
             <div class="col-md-6">
             </div>
           </div>
-
 
           <div class="row">
               <div class="col-md-12">
@@ -30,7 +29,7 @@
                     <% @dejeuners.each do |dejeuner| %>
                       <tr>
                           <td><%= dejeuner.libelle %></td>
-                          <td><%= dejeuner.description %> </td>
+                          <td><%= truncate dejeuner.description, length: 80 %> </td>
                           <td><%= dejeuner.prix %> </td>
                           <td> 
                             <%= link_to 'Show', dejeuner, :class => "btn btn-primary btn-sm"%> <%= link_to 'Edit', edit_dejeuner_path(dejeuner), :class => "btn btn-primary btn-sm" %> <%= link_to 'Delete', dejeuner, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-sm" %>
@@ -40,6 +39,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+          </div>
         </div>
+      </div>
 

@@ -1,38 +1,50 @@
-
-        <div class="container text-header">
-          <h1 class="titre">dejeuner</h1>
-        </div>
-        <div class="container content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="blc-button">
-                <a href='/dejeuners' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a> |  <%= link_to 'Edit', edit_dejeuner_path(@dejeuner), :class => 'btn btn-primary btn-sm' %> 
-              </div>
-            </div>
-            <div class="col-md-6">
-                <p id="notice" class="text-danger"><%= notice %></p>
-            </div>
-          </div>
-
+    <div class="container text-header">
+        <h1 class="titre">dejeuner</h1>
+    </div>
+        <div class="container">
+          <div class="content">
             <div class="row">
-              <div class="col-md-8">
-                <div class="box box-info">
-                  <div class="box box-solid detail">
-                    <p>Libelle : <span> <%= @dejeuner.libelle %></span></p>
-                    <p>Description : <span> <%= @dejeuner.description %></span></p>
-                    <p>Prix : <span> <%= @dejeuner.prix %></span></p>
-                  </div>  
+              <div class="col-md-6">
+                <div class="blc-button">
+                  <a href='/dejeuners' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Return </a> |  <%= link_to 'Edit', edit_dejeuner_path(@dejeuner), :class => 'btn btn-primary btn-sm' %> 
+                </div>
+              </div>
+                <div class="col-md-6">
                 </div>
               </div>
 
-              <div class="col-md-4">
-                <div class="box box-success">
-                  <div class="box-header">
-                      <br> <img src="<%= @dejeuner.image %>" class="img-thumbnail img-center" width="100%"><br>
+              <div class="row">
+                  <div class="col-md-8">
+                        <div class="box box-info">
+                            <div class="box box-solid">
+                              <p>
+                                <strong>Libelle:</strong>
+                                <%= @dejeuner.libelle %>
+                              </p>
+
+                              <p>
+                                <strong>Description:</strong>
+                                <%= @dejeuner.description %>
+                              </p>
+
+                              <p>
+                                <strong>Prix:</strong>
+                                <%= @dejeuner.prix %>
+                              </p>
+
+                            </div>  
+                        </div>
                   </div>
+
+                <div class="col-md-4">
+                    <div class="box box-success">
+                        <div class="box-header">
+                          <br> <img src="<%= @dejeuner.image %>" class="img-thumbnail img-center" width="100%"><br>
+                        </div>
+                    </div>
                 </div>
+
               </div>
             </div>
             </div>
 
-            
