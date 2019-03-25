@@ -3,4 +3,6 @@ class User < ApplicationRecord
 
     validates :name, presence: {message: " - Le champ doit être renseigné!"}, on: :create
     validates :image, presence: {message: " - Veuillez renseigner une image!"}, on: :create
+
+    has_many :favoris
 end

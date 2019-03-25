@@ -1,0 +1,50 @@
+
+  <div class="container-fluid text-header">
+          <h1 class="titre">Évenements</h1>
+        </div>
+        <div class="container">
+        <div class="content">
+          <p id="notice"><%= notice %></p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blc-button">
+                <a href='evenements/new' class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Nouveau menu </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Libelle</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th class="align-center action">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @evenements.each do |evenement| %>
+                        <tr>
+                          <td><%= evenement.libelle %></td>
+                          <td><%= evenement.description %></td>
+                          <td><%= evenement.date %></td>
+                          <td><%= evenement.heure.time.strftime('%Hh %M') %></td>
+                          <td>
+                            <%= link_to 'Show', evenement, :class => "btn btn-primary btn-sm"%>
+                            <%= link_to 'Edit', edit_evenement_path(evenement), :class => "btn btn-primary btn-sm" %>
+                            <%= link_to 'Destroy', evenement, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-sm" %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+
