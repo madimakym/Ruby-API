@@ -54,6 +54,22 @@ body{
     background-color: transparent;
     color: white;
 }
+
+.list-group-item, a{
+    padding-right: 130px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.list-group-item-action:hover{
+    background-color: #2096f3 !important;
+}
+
 .text-header{
     margin-top: 20px;
     margin-bottom: 10px;

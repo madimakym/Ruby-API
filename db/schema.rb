@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_003245) do
 
   create_table "dejeuners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "libelle"
-    t.string "description"
+    t.text "description"
     t.string "prix"
     t.string "image"
     t.datetime "created_at", null: false
